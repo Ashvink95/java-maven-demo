@@ -1,9 +1,25 @@
- package com.example.demo.dto;
+package com.example.demo.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
+/**
+ * Request payload for registration. Matches the React register form:
+ * username + email + password.
+ */
 public class RegisterRequest {
 
+    @NotBlank(message = "Username is required")
+    @Size(min = 3, message = "Username must be at least 3 characters")
     private String username;
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Enter a valid email address")
     private String email;
+
+    @NotBlank(message = "Password is required")
+    @Size(min = 6, message = "Password must be at least 6 characters")
     private String password;
 
     public String getUsername() {
