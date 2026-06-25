@@ -12,6 +12,8 @@ public class User {
 
     private String username;
 
+    private String fullName;
+
     @Column(unique = true)
     private String email;
 
@@ -30,6 +32,14 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getEmail() {
